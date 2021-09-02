@@ -5,19 +5,54 @@
 }
 /* -------------------------------------------------- */
 /* Inizio Common */
-
+body {
+	font-family: 'Rubik', sans-serif;
+}
 /* Fine Common */
 /* -------------------------------------------------- */
 /* Inizio Header */
-
+#header_container {
+	height: 70px;
+	display: flex;
+	align-items: flex-end;
+}
+#header_container__title {
+	position: relative;
+	right: 0;
+	color: #29b1dd;
+}
 /* Fine Header */
 /* -------------------------------------------------- */
 /* Inizio Main */
+#main_container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	height: calc(100vh - 140px);
+	width: 100%;
+	background-color: #dddddd;
+}
 
+.icon {
+	flex-basis: calc(100% / 5 - 40px);
+	min-width: 150px;
+	margin: 20px;
+	padding: 20px;
+	background-color: #f5f5f5;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.icon__name {
+	font-size: 14px;
+}
 /* Fine Main */
 /* -------------------------------------------------- */
 /* Inizio Footer */
-
+#footer_container {
+	height: 70px;
+}
 /* Fine Footer */
 /* -------------------------------------------------- */
 
