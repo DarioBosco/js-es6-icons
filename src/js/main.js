@@ -96,13 +96,42 @@ const icons = [
 		family: 'fas',
 	},
 ];
+
+const colors = {
+	animal: 'green',
+	vegetable: 'orange',
+	user: 'purple',
+};
+
 const iconsContainer = document.getElementById('main_container');
 
-icons.forEach((element) => {
-	const { name, prefix, type, family } = element;
-	iconsContainer.innerHTML += `
-	<div class="icon">
-		<i class="${family} ${prefix + name}" style="color: blue"></i>
-		<div class="icon__name">${name}</div>
-	</div>`;
-});
+printIcons(icons, iconsContainer);
+
+
+//Functions
+function printIcons(array, container) {
+	array.forEach((element) => {
+		const { type } = element;
+
+		getColors(colors, element, type);
+
+		const { name, prefix, family, color } = element;
+		container.innerHTML += `
+		<div class="icon">
+			<i class="${family} ${prefix + name}" style="color: ${color}"></i>
+			<div class="icon__name">${name}</div>
+		</div>`;
+	});
+}
+
+function getColors(colorsObj, targetObj, key) {
+	const colorsList = Object.entries(colorsObj);
+
+	colorsList.forEach((element) => {
+		if (element.includes(key)) {
+			index = colorsList.indexOf(element);
+			targetObj.color = element[1];
+		}
+	});
+	return targetObj;
+}
