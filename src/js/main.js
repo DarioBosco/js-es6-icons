@@ -104,11 +104,34 @@ const colors = {
 };
 
 const iconsContainer = document.getElementById('main_container');
+let selectedType;
+document.getElementById('selectedIcons').addEventListener('change', function () {
+	selectedType = this.value;
+	selectedIcons = filterBySelectedType(icons, selectedType);
+
+	switch (selectedType) {
+		case 'animals':
+			selectedType = 'animal';
+			break;
+		case 'vegetables':
+			selectedType = 'vegetable';
+			break;
+		case 'users':
+			selectedType = 'user';
+			break;
+		default:
+			selectedType = 'all';
+			break;
+	}
+	filterBySelectedType(icons, selectedType);
+	printIcons(selectedIcons, iconsContainer);
+});
 
 printIcons(icons, iconsContainer);
 
 //Functions
 function printIcons(array, container) {
+	container.innerHTML = '';
 	array.forEach((element) => {
 		const { type } = element;
 
@@ -125,12 +148,22 @@ function printIcons(array, container) {
 
 function getColors(colorsObj, targetObj, key) {
 	const colorsList = Object.entries(colorsObj);
-	console.log(colorsList);
-
 	colorsList.forEach((element) => {
 		if (element[0] === key) {
 			targetObj.color = element[1];
 		}
 	});
 	return targetObj;
+}
+
+function filterBySelectedType(array, type) {
+	const filteredArray = array.filter((element) => {
+		if (element.type === type) {
+			return true;
+		} else if (type === 'all') {
+			return array;
+		}
+		return false;
+	});
+	return filteredArray;
 }

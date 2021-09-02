@@ -29,6 +29,7 @@ body {
 
 #main_wrapper {
 	height: calc(100vh - 140px);
+	background-color: #dddddd;
 }
 
 #main_container {
@@ -37,7 +38,14 @@ body {
 	align-items: flex-start;
 	flex-wrap: wrap;
 	width: 100%;
-	background-color: #dddddd;
+}
+
+#select_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	background-color: lightblue;
 }
 
 .icon {

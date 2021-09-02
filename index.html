@@ -7,7 +7,6 @@
 		<link href="https://fonts.googleapis.com/css2?family=Acme&family=Rubik&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="./src/css/style.css" />
-
 		<title>JS ES6 Icons</title>
 	</head>
 
@@ -22,10 +21,18 @@
 
 		<!-- Inizio Main -->
 		<main>
-			<div id="select_container">
-				Select
+			<div id="main_wrapper">
+				<div id="select_container">
+					<label for="selectedIcons">Filtra le icone per tipo: </label>
+					<select id="selectedIcons">
+						<option selected value="all">All Icons</option>
+						<option value="animal">Animals</option>
+						<option value="vegetable">Vegetables</option>
+						<option value="user">Users</option>
+					</select>
+				</div>
+				<div id="main_container"></div>
 			</div>
-			<div id="main_container"></div>
 		</main>
 		<!-- Fine Main -->
 
