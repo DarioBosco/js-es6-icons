@@ -125,9 +125,10 @@ function printIcons(array, container) {
 
 function getColors(colorsObj, targetObj, key) {
 	const colorsList = Object.entries(colorsObj);
+	console.log(colorsList);
 
 	colorsList.forEach((element) => {
-		if (element[0].includes(key)) {
+		if (element[0] === key) {
 			targetObj.color = element[1];
 		}
 	});
