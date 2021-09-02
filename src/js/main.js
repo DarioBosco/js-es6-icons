@@ -107,7 +107,6 @@ const iconsContainer = document.getElementById('main_container');
 
 printIcons(icons, iconsContainer);
 
-
 //Functions
 function printIcons(array, container) {
 	array.forEach((element) => {
@@ -128,8 +127,7 @@ function getColors(colorsObj, targetObj, key) {
 	const colorsList = Object.entries(colorsObj);
 
 	colorsList.forEach((element) => {
-		if (element.includes(key)) {
-			index = colorsList.indexOf(element);
+		if (element[0].includes(key)) {
 			targetObj.color = element[1];
 		}
 	});
